@@ -3,14 +3,23 @@
 
 
 
-## For Dagshub:
+## For current Dagshub:
 
-MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/MLflow-Basic-Demo.mlflow \
-MLFLOW_TRACKING_USERNAME=entbappy \
-MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0 \
+import dagshub
+dagshub.init(repo_owner='mahfuzrahmandsuh23', repo_name='EndToEnd_MLproject_ExperimentTracking_mlflow_Dagshub_Aws_wineqiality', mlflow=True)
+
+import mlflow
+with mlflow.start_run():
+mlflow.log_param('parameter name', 'value')
+  mlflow.log_metric('metric name', 1)
+
+
+previous dagshub format:
+
+MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/MLflow-Basic-Demo.mlflow
+MLFLOW_TRACKING_USERNAME=entbappy
+MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
 python script.py
-
-
 
 ```bash
 
