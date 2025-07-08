@@ -4,6 +4,7 @@
 
 
 ## For current Dagshub:
+#Initising Dagshub
 
 import dagshub
 dagshub.init(repo_owner='mahfuzrahmandsuh23', repo_name='EndToEnd_MLproject_ExperimentTracking_mlflow_Dagshub_Aws_wineqiality', mlflow=True)
@@ -11,26 +12,11 @@ dagshub.init(repo_owner='mahfuzrahmandsuh23', repo_name='EndToEnd_MLproject_Expe
 import mlflow
 with mlflow.start_run():
 mlflow.log_param('parameter name', 'value')
-  mlflow.log_metric('metric name', 1)
+mlflow.log_metric('metric name', 1)
 
 
-previous dagshub format:
-
-MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/MLflow-Basic-Demo.mlflow
-MLFLOW_TRACKING_USERNAME=entbappy
-MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
-python script.py
-
-```bash
-
-export MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/MLflow-Basic-Demo.mlflow
-
-export MLFLOW_TRACKING_USERNAME=entbappy 
-
-export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
 
 
-```
 
 
 # MLflow on AWS
@@ -71,13 +57,13 @@ aws configure
 
 
 #Finally 
-mlflow server -h 0.0.0.0 --default-artifact-root s3://mlflow-test-23
+mlflow server -h 0.0.0.0 --default-artifact-root s3://mlflowbucket25
 
 #open Public IPv4 DNS to the port 5000
 
 
 #set uri in your local terminal and in your code 
-export MLFLOW_TRACKING_URI=http://ec2-54-147-36-34.compute-1.amazonaws.com:5000/
+export MLFLOW_TRACKING_URI=http://ec2-51-21-202-83.eu-north-1.compute.amazonaws.com:5000/
 ```
 
 
